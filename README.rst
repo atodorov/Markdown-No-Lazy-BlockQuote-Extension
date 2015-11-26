@@ -6,8 +6,8 @@ Markdown No Lazy BlockQuote Extension
    :alt: Build status
 
 
-.. image:: https://pypip.in/download/django-s3-cache/badge.png
-    :target: https://pypi.python.org/pypi/django-s3-cache/
+.. image:: https://pypip.in/download/Markdown-No-Lazy-BlockQuote-Extension/badge.png
+    :target: https://pypi.python.org/pypi/Markdown-No-Lazy-BlockQuote-Extension/
     :alt: Downloads
 
 

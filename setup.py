@@ -18,7 +18,7 @@ with open('README.rst') as file:
 
 config = {
     'name' : 'Markdown-No-Lazy-BlockQuote-Extension',
-    'version' : '0.1',
+    'version' : '0.2',
     'packages' : find_packages(),
     'author' : 'Alexander Todorov',
     'author_email' : 'atodorov@nospam.otb.bg',
