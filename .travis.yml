@@ -1,8 +1,9 @@
 env:
+- _MARKDOWN=2.6.10
 - _MARKDOWN=2.6.5
 - _MARKDOWN=2.6.6
-- !!python/unicode '_MARKDOWN=2.6.8'
-- !!python/unicode '_MARKDOWN=2.6.9'
+- _MARKDOWN=2.6.8
+- _MARKDOWN=2.6.9
 install:
 - pip install Markdown==$_MARKDOWN
 language: python
