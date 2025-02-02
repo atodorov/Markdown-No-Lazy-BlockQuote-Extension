@@ -1,0 +1,33 @@
+name: testing
+
+on:
+  push:
+    branches: master
+  pull_request:
+
+permissions: read-all
+
+jobs:
+  unit-test:
+    runs-on: ubuntu-24.04
+    name: unit test with Python ${{ matrix.python-version }} and Markdown ${{ matrix.markdown-version }}
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: [3.13]
+        markdown-version: [3.7]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Execute tests
+        run: |
+          pip install -U pip setuptools
+          pip install Markdown==${{ matrix.markdown-version }}
+
+          python -m unittest discover -v nlbqx/
