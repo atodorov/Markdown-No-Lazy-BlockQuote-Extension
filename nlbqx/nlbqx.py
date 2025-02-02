@@ -1,9 +1,13 @@
-from markdown import util, Extension
+import xml.etree.ElementTree as etree
+
+from markdown import Extension
 from markdown.blockprocessors import BlockQuoteProcessor
 
+
 class NLBQExtension(Extension):
-    def extendMarkdown(self, md, md_globals):
-        md.parser.blockprocessors['quote'] = NLBQProcessor(md.parser)
+    def extendMarkdown(self, md):
+        # see markdown/blockprocessors.py
+        md.parser.blockprocessors.register(NLBQProcessor(md.parser), 'quote', 20)
 
 
 class NLBQProcessor(BlockQuoteProcessor):
@@ -21,7 +25,7 @@ class NLBQProcessor(BlockQuoteProcessor):
             )
 
         # no lazy blockquotes
-        quote = util.etree.SubElement(parent, 'blockquote')
+        quote = etree.SubElement(parent, 'blockquote')
 
         # Recursively parse block with blockquote as parent.
         # change parser state so blockquotes embedded in lists use p tags
