@@ -77,7 +77,7 @@ Quote 2</p>
 
     def runTest(self):
         for (description, markup, expected) in self.test_cases:
-            self.assertEquals(self.md.convert(markup), expected.strip(), msg=description)
+            self.assertEqual(self.md.convert(markup), expected.strip(), msg=description)
 
 
 if __name__ == "__main__":
